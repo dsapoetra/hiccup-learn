@@ -4,9 +4,11 @@
             [hiccup-learn.views.home :as hp]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
+
 (defroutes app-routes
   (GET "/" [] "HOME")
-  (GET "/:neo" [neo] (hp/home-page (hp/neo-home-page neo)))
+  (GET "/:neo" [neo] (hp/home-page neo))
+  (route/resources "/")                                     ;;here's the resources
   (route/not-found "Not Found"))
 
 (def app
