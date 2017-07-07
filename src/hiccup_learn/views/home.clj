@@ -6,22 +6,28 @@
 (declare neo-home-page)
 
 (def data-from-db
-  ["This is whatever this is"
-      "Lorem yang banyak "
-      "Another whooooaaa"])
+  ["Black's apple is delicious"
+   "I was assigned a gold bullion"
+   "I am in the same group as orange"
+   "The weather in the mountains changes often. Like yesterday, it rained hard"
+   "I'm not in the same group as white"
+   "I'm not in the same group as green"
+   "Red's apple is probably delicious"])
 
 (defn home-page [input]
       (hiccup/html5
         [:head
-         [:title "Hiccup learn"]]
+         [:title "Level 1"]]
         [:body
-         [:div
-          (into [:ul]
-                (mapv #(do [:li (str "what the " %)]) (range (read-string input))))]
-         [:div
-          [:img {:src "/img/IMG_0400.JPG"}]
-          [:h4 "This is the passage"]
-          (into [:ol] (mapv #(do [:li %]) data-from-db))]]))
+         [:div {:style "background-color : silver;"}
+          [:center
+           [:h1 "There are seven dwarves"]
+           [:h2 "each with a different colored apple"]]
+
+          [:div {:style "width : 50px; backround-color: white;"}[:img {:src "/img/IMG_0400.PNG"}]]
+          [:h4 "This is what dwarf says"]
+          (into [:ul] (mapv #(do [:li %]) data-from-db))]
+         [:p "click Here for"]]))
 
 
 (defn neo-home-page [input]
@@ -32,6 +38,3 @@
           [:center
            [:h1 {:style "font-size : 99px;"} (str (inc (read-string input)))]])))
 
-
-(defn newthings []
-  (+ 3 3))
