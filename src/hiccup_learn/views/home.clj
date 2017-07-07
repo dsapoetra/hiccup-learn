@@ -17,17 +17,26 @@
 (defn home-page [input]
       (hiccup/html5
         [:head
-         [:title "Level 1"]]
+         [:title "Level 1"]
+         ;;<link rel="stylesheet" href="styles.css">
+         [:link {:rel "stylesheet"
+                 :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"}]]
         [:body
          [:div {:style "background-color : silver;"}
           [:center
            [:h1 "There are seven dwarves"]
            [:h2 "each with a different colored apple"]]
 
-          [:div {:style "width : 50px; backround-color: white;"}[:img {:src "/img/IMG_0400.PNG"}]]
-          [:h4 "This is what dwarf says"]
+          [:div {:style "width : 50px; backround-color: white;"}
+           [:img {:src "/img/IMG_0400.PNG"}]]
+          ;;<a href="url">link text</a>
+          [:a {:href "/billion"} [:h4 "This is what dwarf says"]]
           (into [:ul] (mapv #(do [:li %]) data-from-db))]
          [:p "click Here for"]]))
+
+
+
+
 
 
 (defn neo-home-page [input]
