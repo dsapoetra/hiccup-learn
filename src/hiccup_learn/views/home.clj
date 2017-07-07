@@ -37,8 +37,6 @@
 
 
 
-
-
 (defn neo-home-page [input]
       (if (symbol? (read-string input))
         [:center
@@ -47,3 +45,6 @@
           [:center
            [:h1 {:style "font-size : 99px;"} (str (inc (read-string input)))]])))
 
+
+(defn newthings []
+  (+ 3 3))
