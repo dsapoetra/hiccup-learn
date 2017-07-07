@@ -7,7 +7,8 @@
 
 (defroutes app-routes
   (GET "/" [] "HOME")
-  (GET "/:neo" [neo] (hp/home-page neo))
+ (GET "/rehan" [] (hp/tribute-page))
+ (GET "/:neo" [neo] (hp/home-page neo))
   (route/resources "/")                                     ;;here's the resources
   (route/not-found "Not Found"))
 
